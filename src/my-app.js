@@ -23,7 +23,7 @@ const MyApp = ()=>{
             <header>
                 <h1>شمارنده من</h1>
             </header>
-            <Counter />
+            <Counter inc={increaseCount} dec={decreaseCount} reset={resetCount} count={count}/>
         </div>
     );
 }
