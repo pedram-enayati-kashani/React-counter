@@ -1,22 +1,22 @@
-import {Component} from 'react'
-import PropTypes, {number} from "prop-types";
+import PropTypes from 'prop-types';
 
-const Counter = ({inc,dec,reset,count}) =>{
+const Counter = ({inc, dec, rest, count}) => {
     return (
         <div>
-            <p>{count}</p>
+            <h1>{count}</h1>
+
             <button onClick={inc}>+</button>
             <button onClick={dec}>-</button>
-            <button onClick={reset}>reset</button>
+            <button onClick={rest}>💥</button>
         </div>
-    );
+    )
 }
 
-Counter.prototype = {
-  inc: PropTypes.func,
-  dec: PropTypes.func,
-  reset: PropTypes.func,
-  count: PropTypes.number,
-};
+Counter.propTypes = {
+    inc: PropTypes.func,
+    dec: PropTypes.func,
+    rest: PropTypes.func,
+    count: PropTypes.number
+}
 
 export default Counter;
