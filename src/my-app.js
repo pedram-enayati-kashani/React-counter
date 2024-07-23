@@ -1,27 +1,31 @@
 import './my-app.css';
 import {Component} from 'react';
+import {useState} from 'react';
 import Counter from "./components/counter";
 
-// const MyApp = ()=>{
-//     return (
-//         <div className="MyApp">
-//             <h3>شمارنده من</h3>
-//             <br/>
-//             <Counter />
-//         </div>
-//     );
-// }
-
-class MyApp extends Component{
-    render() {
-        return (
-            <div className="MyApp">
-                <h3>شمارنده من</h3>
-                <Counter count={5}/>
-                <Counter />
-            </div>
-        );
+const MyApp = ()=>{
+    const [count, setCount] = useState(0);
+    const  changeCount = ()=>{
+        setCount(5);
     }
+
+    const  increaseCount = ()=>{
+        setCount(count+1);
+    }
+    const  decreaseCount = ()=>{
+        setCount(count-1);
+    }
+    const  resetCount = ()=>{
+        setCount(0);
+    }
+    return (
+        <div className="MyApp">
+            <header>
+                <h1>شمارنده من</h1>
+            </header>
+            <Counter />
+        </div>
+    );
 }
 
 export default MyApp;

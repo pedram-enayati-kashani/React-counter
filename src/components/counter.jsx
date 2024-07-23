@@ -1,32 +1,31 @@
 import {Component} from 'react'
 
-// const Counter = ({count})=>{
-//     return (
-//         <div className="Counter">
-//             <p>شمارنده : {count || 90}</p>
-//         </div>
-//     );
-// }
+class Counter extends Component {
 
-class Counter extends Component{
+    constructor() {
+        super();
+        this.state = {name : "پدرام"};
+        // this.changeName = this.changeName.bind(this);
+    }
 
-    static defaultProps = {
-        count: 150
+    // changeName() {
+    //     this.setState({
+    //         name : 'پدرام عنایتی'
+    //     })
+    // }
+
+    changeName = () => {
+        this.setState({name : 'پدرام عنایتی'});
     }
 
     render() {
-        const {count} = this.props;
         return (
             <div>
-                <p>شمارنده : {count}</p>
+                <p>{this.state.name}</p>
+                <button onClick={this.changeName}>تغییر نام</button>
             </div>
-        )
+        );
     }
 }
-
-
-// Counter.defaultProps = {
-//     count : 5,
-// }
 
 export default Counter;
